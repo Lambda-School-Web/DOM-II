@@ -78,9 +78,33 @@ pElms.forEach(el => {
 
 //Dragend Alert
 const headerImg = document.querySelector("#headerimg");
-console.log(headerImg);
 headerImg.addEventListener("dragend", e => {
   alert(`Thanks for letting go of ${e.target.src}`);
 });
 
-//
+//Rotate images on click
+
+images.forEach(el => {
+  el.addEventListener("click", e => {
+    rotateAnimation = TweenMax.fromTo(
+      el,
+      2,
+      { rotationY: 0 },
+      { rotationY: 180 }
+    );
+  });
+});
+
+//Blink h2 Headers
+
+const contentHeaders = document.querySelectorAll("h2");
+contentHeaders.forEach(el => {
+  el.addEventListener("mouseover", e => {
+    blinkAnimation = TweenMax.fromTo(
+      el,
+      0.5,
+      { opacity: 1 },
+      { opacity: 0, repeat: -1 }
+    );
+  });
+});
