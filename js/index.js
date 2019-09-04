@@ -63,6 +63,8 @@ navLinks.forEach(el =>
   })
 );
 
+navLinks.forEach(el => el.addEventListener("click", e => e.preventDefault()));
+
 //Copy alert of paragraphs
 const pElms = document.querySelectorAll("p");
 
@@ -106,5 +108,21 @@ contentHeaders.forEach(el => {
       { opacity: 1 },
       { opacity: 0, repeat: -1 }
     );
+  });
+});
+
+//Stop Propagation
+const sectionElms = document.querySelectorAll("section");
+
+sectionElms.forEach(el => {
+  el.addEventListener("click", e => {
+    el.style.color = "pink";
+  });
+});
+
+pElms.forEach(el => {
+  el.addEventListener("click", e => {
+    e.stopPropagation();
+    el.style.color = "pink";
   });
 });
