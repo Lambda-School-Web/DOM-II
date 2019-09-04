@@ -99,7 +99,7 @@ images.forEach(el => {
 
 const contentHeaders = document.querySelectorAll("h2");
 contentHeaders.forEach(el => {
-  el.addEventListener("mouseover", e => {
+  el.addEventListener("dblclick", e => {
     blinkAnimation = TweenMax.fromTo(
       el,
       0.5,
